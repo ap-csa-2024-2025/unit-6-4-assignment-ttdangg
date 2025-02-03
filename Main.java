@@ -10,13 +10,26 @@ public class Main
 
   public static int countLength(String[] arr, int targetLength)
   {
-    // replace with your code
-    return 0;
+    int count = 0
+    for(int i = 0; i < arr.length; i++)
+    {
+      if (arr[i].length() == targetLength)
+      {
+        count++
+      }
+    }
+    return count;
   }
 
   public static int indexOf(double[] arr, double target)
   {
-    // replace with your code
+    for (int i = 0; i < arr.length; i++)
+    {
+      if (arr[i] == target)
+      {
+        return i;
+      }
+    }
     return -1;
   }
 
