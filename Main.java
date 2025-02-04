@@ -10,12 +10,12 @@ public class Main
 
   public static int countLength(String[] arr, int targetLength)
   {
-    int count = 0
+    int count = 0;
     for(int i = 0; i < arr.length; i++)
     {
       if (arr[i].length() == targetLength)
       {
-        count++
+        count++;
       }
     }
     return count;
@@ -35,13 +35,45 @@ public class Main
 
   public static boolean hasDuplicates(int[] arr)
   {
-    // replace with your code
+    for (int i = 0; i < arr.length; i++)
+    {
+      int target = arr[i];
+      for (int j = 0; j < arr.length; j++)
+      {
+        int elem = arr[j];
+        if (target == elem && i != j)
+        {
+          return true; 
+        }
+      }
+     
     return false;
   }
 
   public static String findMode(String[] arr)
   {
-    // replace with your code
-    return null;
+    int count = 0;
+    int mode = arr[0];
+    int max_count = 0;
+    for (int i = 0; i < arr.length; i++)
+    {
+      String target = arr[i];
+      count = 0;
+      for (int j = 0; j < arr.length; j++)
+      {
+        int num = arr[j];
+        if (target == num)
+        {
+          count ++; 
+        }
+      }
+
+      if (count > max_count)
+      {
+        max_count = count;
+        mode = arr[i];
+      }
+    }
+    return mode; 
   }
 }
